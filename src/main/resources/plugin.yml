@@ -1,0 +1,31 @@
+name: QuantumCompressor
+version: '${project.version}'
+main: fr.n0va.quantumCompressor.QuantumCompressor
+api-version: '1.21'
+description: Dynamic inventory compression engine with zero manual configuration.
+author: Maxime
+
+permissions:
+  quantumcompressor.use:
+    description: Allows execution of the /compress command.
+    default: true
+  quantumcompressor.auto:
+    description: Allows toggling automatic compression on item pickup.
+    default: true
+  quantumcompressor.admin:
+    description: Allows administrative access and reloading recipe caches.
+    default: op
+
+commands:
+  compress:
+    description: Compresses all valid resources in your inventory.
+    permission: quantumcompressor.use
+    aliases: [qc, qcompress]
+  autocompress:
+    description: Toggles automatic compression on item pickup.
+    permission: quantumcompressor.auto
+    aliases: [ac, qac]
+  quantumcompressor:
+    description: Main plugin command and admin utilities.
+    permission: quantumcompressor.use
+    aliases: [quantum]
